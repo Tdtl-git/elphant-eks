@@ -12,7 +12,7 @@ metadata:
     alb.ingress.kubernetes.io/target-type: "ip"
 spec:
   rules:
-  - host: myproject.com
+  - host: elephant-eks.tdtlworld.com
     http:
       paths:
       - path: /api
