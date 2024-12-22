@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: django-backend
-  namespace: myproject
+  namespace: workshop
 spec:
   replicas: 3
   selector:
@@ -15,22 +15,15 @@ spec:
     spec:
       containers:
       - name: django-backend
-        image: my-dockerhub/django-image:latest
+        image: chetantdtl/elephant-backend
         ports:
         - containerPort: 8000
-        env:
-        - name: DJANGO_SETTINGS_MODULE
-          value: "myproject.settings"
-        - name: DEBUG
-          value: "False"
-        - name: ALLOWED_HOSTS
-          value: "*"
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: django-backend-service
-  namespace: myproject
+  namespace: workshop
 spec:
   ports:
   - port: 8000
