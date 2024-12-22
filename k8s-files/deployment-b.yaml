@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-backend
+  namespace: workshop
+spec:
+  replicas: 3  # You can change the initial replica count
+  selector:
+    matchLabels:
+      app: django-backend
+  template:
+    metadata:
+      labels:
+        app: django-backend
+    spec:
+      containers:
+      - name: django-backend
+        image: chetantdtl/elephant-backend
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            cpu: "500m"  # Request 0.5 CPU
+            memory: "512Mi"  # Request 512MB memory
+          limits:
+            cpu: "1"  # Limit to 1 CPU
+            memory: "1Gi"  # Limit to 1GB memory
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: django-backend-service
+  namespace: workshop
+spec:
+  ports:
+  - port: 8000
+    targetPort: 8000
+  selector:
+    app: django-backend
+  type: ClusterIP
