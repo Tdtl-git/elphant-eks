@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-frontend
+  namespace: workshop
+spec:
+  replicas: 3  # You can change the initial replica count
+  selector:
+    matchLabels:
+      app: react-frontend
+  template:
+    metadata:
+      labels:
+        app: react-frontend
+    spec:
+      containers:
+      - name: react-frontend
+        image: chetantdtl/elephant-frontend
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "500m"  # Request 0.5 CPU
+            memory: "512Mi"  # Request 512MB memory
+          limits:
+            cpu: "1"  # Limit to 1 CPU
+            memory: "1Gi"  # Limit to 1GB memory
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: react-frontend-service
+  namespace: workshop
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: react-frontend
+  type: ClusterIP
