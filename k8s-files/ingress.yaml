@@ -5,8 +5,9 @@ metadata:
   namespace: workshop  # Ensure it matches the namespace used for the backend service
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80} , {"HTTPS": 443}]'
     alb.ingress.kubernetes.io/target-type: "ip"
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:891612558678:certificate/1aad1910-a3d1-4e7a-8426-d8c6e5c23d6f
 spec:
   ingressClassName: alb
   rules:
