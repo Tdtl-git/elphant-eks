@@ -31,6 +31,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: argocd-server.argocd
+            name: argocd-server-clusterip
             port:
               number: 443  # ArgoCD service port
