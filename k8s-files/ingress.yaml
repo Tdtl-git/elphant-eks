@@ -26,4 +26,4 @@ spec:
           service:
             name: react-frontend-service
             port:
-              number: 80  # Port for the frontend (React)
+              number: 80  # Port for the frontend (React) 
