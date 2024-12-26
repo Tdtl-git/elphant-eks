@@ -25,6 +25,6 @@ spec:
         backend:
           service:
             name: argocd-server
-            namespace: argocd  # Specify the namespace for the ArgoCD server
+            namespace: argocd  # Cross-namespace reference to ArgoCD service
             port:
-              number: 80  # NodePort for ArgoCD HTTP service
+              number: 80  # ArgoCD service port (mapped from NodePort or ClusterIP)
