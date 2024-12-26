@@ -27,4 +27,4 @@ spec:
             name: argocd-server
             namespace: argocd  # Specify the namespace for the ArgoCD server
             port:
-              number: 443  # NodePort for ArgoCD HTTP service
+              number: 80  # NodePort for ArgoCD HTTP service
