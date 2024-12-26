@@ -27,4 +27,4 @@ spec:
             name: argocd-server
             namespace: argocd  # Cross-namespace reference to ArgoCD service
             port:
-              number: 80  # ArgoCD service port (mapped from NodePort or ClusterIP)
+              number: 443  # ArgoCD service port (mapped from NodePort or ClusterIP)
