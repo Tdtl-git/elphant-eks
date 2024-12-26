@@ -21,11 +21,3 @@ spec:
             name: react-frontend-service
             port:
               number: 80  # Port for the frontend (React)
-      - path: /argocd
-        pathType: Prefix
-        backend:
-          service:
-            name: argocd-server
-            namespace: argocd  # Cross-namespace reference to ArgoCD service
-            port:
-              number: 443  # ArgoCD service port (mapped from NodePort or ClusterIP)
