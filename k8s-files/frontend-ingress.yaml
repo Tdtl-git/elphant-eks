@@ -2,18 +2,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: frontend-ingress
-  namespace: workshop  # Namespace for the frontend service
+  namespace: workshop
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]' # Enable HTTPS
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     alb.ingress.kubernetes.io/target-type: "ip"
     alb.ingress.kubernetes.io/backend-protocol: HTTP
-    kubernetes.io/ingress.class: alb
-    cert-manager.io/cluster-issuer: letsencrypt-prod # Specify the ClusterIssuer
+    cert-manager.io/issuer: letsencrypt-prod  # Use the ClusterIssuer here
 spec:
   ingressClassName: alb
   rules:
-  - host: front-elephant-eks.tdtlworld.com  # Domain for frontend
+  - host: front-elephant-eks.tdtlworld.com
     http:
       paths:
       - path: /
@@ -22,8 +21,4 @@ spec:
           service:
             name: react-frontend-service
             port:
-              number: 80  # Port for the frontend (React)
-  tls: # TLS settings
-  - hosts:
-    - front-elephant-eks.tdtlworld.com
-    secretName: front-elephant-tls # Secret for the TLS certificate
+              number: 80
