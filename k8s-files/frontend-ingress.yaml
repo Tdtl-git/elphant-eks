@@ -22,10 +22,4 @@ spec:
             name: react-frontend-service
             port:
               number: 80  # Port for the frontend (React)
-      - path: /api
-        pathType: Prefix
-        backend:
-          service:
-            name: django-backend-service
-            port:
-              number: 8000  # Port for the backend (Django)
+      
