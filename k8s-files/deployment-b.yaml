@@ -4,7 +4,7 @@ metadata:
   name: django-backend
   namespace: workshop
 spec:
-  replicas: 3  # You can change the initial replica count
+  replicas: 2  # You can change the initial replica count
   selector:
     matchLabels:
       app: django-backend
