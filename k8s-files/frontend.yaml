@@ -4,7 +4,7 @@ metadata:
   name: react-frontend
   namespace: workshop
 spec:
-  replicas: 2  # You can change the initial replica count
+  replicas: 3  # You can change the initial replica count
   selector:
     matchLabels:
       app: react-frontend
