@@ -13,7 +13,7 @@ spec:
   - host: elephant-eks.tdtlworld.com  # Your domain name
     http:
       paths:
-      - path: /api
+      - path: /*
         pathType: Prefix
         backend:
           service:
