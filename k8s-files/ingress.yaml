@@ -13,4 +13,11 @@ spec:
   - host: elephant-eks.tdtlworld.com  # Your domain name
     http:
       paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: django-backend-service
+            port:
+              number: 8000  # Port for the backend (Django)
       
