@@ -5,9 +5,10 @@ metadata:
   namespace: workshop  # Namespace for the frontend service
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80, "HTTPS": 443}]'  # Add HTTPS listener
     alb.ingress.kubernetes.io/target-type: "ip"
     alb.ingress.kubernetes.io/backend-protocol: HTTP
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-1:891612558678:certificate/8e9a13ea-5b19-4b6d-b1fb-b7d39bcfb9a4
 spec:
   ingressClassName: alb
   rules:
