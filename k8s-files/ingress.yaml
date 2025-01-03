@@ -9,6 +9,7 @@ metadata:
     alb.ingress.kubernetes.io/target-type: "ip"
     alb.ingress.kubernetes.io/backend-protocol: HTTP
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:891612558678:certificate/c504bb22-68f2-423f-86dd-755867b3be04
+    alb.ingress.kubernetes.io/ssl-redirect: 'true'
 spec:
   ingressClassName: alb
   rules:
