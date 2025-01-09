@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: myproject-ingress
-  namespace: aaas-workshop  # Ensure it matches the namespace used for the backend and frontend services
+  namespace: elephant-workshop  # Ensure it matches the namespace used for the backend and frontend services
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80, "HTTPS": 443}]'  # Add HTTPS listener
