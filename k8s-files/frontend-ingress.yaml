@@ -5,7 +5,7 @@ metadata:
   namespace: elephant-workshop  # Namespace for the frontend service
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80, "HTTPS": 443}]'  # Add HTTPS listener
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'  # Add HTTPS listener
     alb.ingress.kubernetes.io/target-type: "ip"
     alb.ingress.kubernetes.io/backend-protocol: HTTP
 spec:
