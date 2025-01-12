@@ -2,7 +2,7 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: django-backend-hpa
-  namespace: workshop
+  namespace: elephant-workshop
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
@@ -22,7 +22,7 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: react-frontend-hpa
-  namespace: workshop
+  namespace: elephant-workshop
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
